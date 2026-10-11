@@ -1,0 +1,14 @@
+/* Disable unused LDO1 that powers IMU/MIC  */
+&pmic {
+    regulators {
+        LDO1 {
+            /delete-property/ regulator-boot-on;
+        };
+    };
+};
+
+// Allow nPM1300 LED1 to be changed to save power
+&pmic_leds {
+    status = "okay";
+    nordic,led1-mode = "host";
+};

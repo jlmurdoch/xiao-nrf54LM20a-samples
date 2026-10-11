@@ -1,0 +1,10 @@
+#include <zephyr/dt-bindings/regulator/npm13xx.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&pmic_i2c {
+    status = "okay";
+};
+
+&pmic {
+    status = "okay";
+};
