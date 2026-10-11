@@ -1,6 +1,3 @@
 {
-    "nrf-connect.applications": [
-        "${workspaceFolder}/examples/ble-adv"
-    ],
-    "cmake.sourceDirectory": "/Users/jmurdoch/Documents/github/xiao-nrf54LM20a-samples/examples/ble-adv"
+    "cmake.ignoreCMakeListsMissing": true
 }
