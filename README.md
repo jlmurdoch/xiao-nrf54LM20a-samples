@@ -1,37 +1,40 @@
 # XIAO nRF54LM20A + nRF Connect SDK
 
-This is a series of examples for the XIAO nRF54LM20A, referenced from the [Seeed Studio wiki](https://wiki.seeedstudio.com/xiao_nrf54lm20a_ncs/). Most of the samples are Platform.io focused, but this one is nRF Connect SDK based.
+This is a series of examples for the XIAO nRF54LM20A, referenced from the [Seeed Studio wiki](https://wiki.seeedstudio.com/xiao_nrf54lm20a_ncs/) or other locations. This is fully nRF Connect SDK & Zephyr RTOS based. Examples have been cut down for clarity and not necessarily good practice (i.e. validation, logging).
 
 ## Building the examples
 
-Need to add the boards definition to nRF Connect SDK from the [platform-seeedboards repo](https://github.com/Seeed-Studio/platform-seeedboards/tree/main/zephyr/nrf/boards/seeed/xiao_nrf54lm20a).
+### Configuration
+Add the board definition to nRF Connect SDK from the [Seeed Studio `platform-seeedboards` repo](https://github.com/Seeed-Studio/platform-seeedboards/). The board will be in `zeyphr/nrf`.
 
 To add this to **nRF Connect** extension in VS Code:
 - Open the "Cog" or "Gearwheel" > then select **Settings**
 - In the search bar, type: `nrf-connect.boardRoots`
 - Click **Add Item** 
-- Paste in path. e.g. `~/Documents/github/platform-seeedboards/zephyr`
+- Paste in path where the directory `boards` is located. e.g. `~/Documents/github/platform-seeedboards/zephyr/nrf`
 - Click **OK**
 
+A copy of the XIAO nRF54LM20A board configuration has been put in this repo to correspond with any changes to the overlay needed in future.
+
 ### Build Configuration
-- NRF Connect > Applications / Build section > Add Build Configuration button
+- **NRF Connect** extension > **Applications** or **Build** section > **Add Build Configuration** button
   - Board Target: `xiao_nrf54lm20a/nrf54lm20a/cpuapp`
   - Base configuration files: `prj.conf`
   - Extra Devicetree overlays: `boards/app.overlay`
-  - Click **Generate and Build**
+  - Click **Generate and Build** button
 
 ### Rebuilding
 If the above doesn't work, or a code change has been made:
-  - NRF Connect > Actions section > Build button
+  - **NRF Connect** extension > **Actions** section > **Build** button
 
 ### Flashing
-To flash, this is done manually:
-- NRF Connect > Welcome section > Open terminal button:
+To flash, this is done manually via a terminal:
+- **NRF Connect** extension > **Welcome** section > **Open terminal** button:
   - `west flash`
 
 ### Serial Console
-- Bottom status bar > Serial Monitor tab:
-  - Port: `/dev/tty.usbmodem2EEDXXXX - Seeed Studio`
+- Bottom panel in VS Code > **Serial Monitor** tab:
+  - Select the port from the **Port** dropdown: `/dev/tty.usbmodem2EEDXXXX - Seeed Studio`
   - Click **Start Monitoring**
 
 ## Example List
